@@ -1,0 +1,15 @@
+"""
+    Estructura de las urls:
+
+    /character/
+    /character/1/
+    /character/1/detalle/
+
+    /clan/
+    /clan/1/
+    /clan/1/detalle/
+
+    /item/
+    /item/1/
+    /item/detalle/
+"""
