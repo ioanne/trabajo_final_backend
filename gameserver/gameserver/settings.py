@@ -29,6 +29,10 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+EXTERNAL_APPS = [
+    "django_extensions",
+]
+
 LOCAL_APPS = [
     "apps.character",
     "apps.clan",
@@ -36,6 +40,7 @@ LOCAL_APPS = [
     "apps.item",
     "apps.location",
     "apps.npc",
+    "apps.inventary",
 ]
 
 DJANGO_APPS = [
@@ -47,7 +52,7 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
-INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS
+INSTALLED_APPS = DJANGO_APPS + EXTERNAL_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
