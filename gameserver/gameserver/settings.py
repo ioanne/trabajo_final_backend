@@ -34,9 +34,9 @@ EXTERNAL_APPS = [
 ]
 
 LOCAL_APPS = [
+    "apps.custom_user",
     "apps.character",
     "apps.clan",
-    "apps.custom_user",
     "apps.item",
     "apps.location",
     "apps.npc",
@@ -136,3 +136,5 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+AUTH_USER_MODEL = "custom_user.CustomUser"

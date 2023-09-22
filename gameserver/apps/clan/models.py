@@ -28,6 +28,21 @@ class Clan(models.Model):
     def __str__(self):
         return f"{self.name}({self.id}) - {self.nivel}"
 
+    @classmethod
+    def get_cosas(
+        cls,
+        nivel_leader,
+        nivel_clan,
+        leader_inventary_item_name,
+        leader_inventary_equipped,
+    ):
+        cls.objects.filter(
+            leader__nivel__gte=nivel_leader,
+            nivel=nivel_clan,
+            leader__inventary__item__name=leader_inventary_item_name,
+            leader__inventary__equipped=leader_inventary_equipped,
+        )
+
 
 class ClanMember(models.Model):
     character = models.ForeignKey(
@@ -39,3 +54,15 @@ class ClanMember(models.Model):
     title = models.CharField(max_length=50)
 
     # El clan member no se deberia poder borrar si es lider del clan.
+
+
+"""
+Query compleja:
+Clan.objects.filter(
+    leader__nivel__gte=10,
+    nivel=1,
+    leader__inventary__item__name='pepe',
+    leader__inventary__equipped=True,
+    leader=character
+)
+"""
